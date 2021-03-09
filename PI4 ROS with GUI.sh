@@ -21,8 +21,8 @@ rosdep update
 echo "Create a catkin Workspace"
 mkdir -p ~/ros_catkin_ws
 cd ~/ros_catkin_ws
-rosinstall_generator ros_comm common_msgs image_common image_transport_plugins diagnostics nodelet_core rqt --rosdistro kinetic --deps --wet-only --tar > kinetic-ros_comm-common_msgs-image_common-image_transport_plugins-diagnostics-nodelet_core-rqt.rosinstall
-wstool init src kinetic-ros_comm-common_msgs-image_common-image_transport_plugins-diagnostics-nodelet_core-rqt.rosinstall
+rosinstall_generator desktop --rosdistro kinetic --deps --wet-only --tar > kinetic-desktop-wet.rosinstall
+wstool init src kinetic-desktop-wet.rosinstall
 
 echo "Resolving Unavailable Dependencies"
 mkdir -p ~/ros_catkin_ws/external_src
@@ -60,3 +60,4 @@ source /opt/ros/kinetic/setup.bash
 echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
 
 echo "Installation complete!"
+roscore
